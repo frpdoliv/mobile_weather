@@ -25,93 +25,89 @@ class WeatherCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.40,
-      width: MediaQuery.of(context).size.width * 0.85,
-      child: Card(
-        elevation: 6.0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15.0),
-        ),
-        child: Padding (
-          padding: const EdgeInsets.symmetric(
-            horizontal: 20.0, 
-            vertical: 15.0
-          ),
-          child: Column (
-            children: <Widget> [
-              Expanded (
-                flex: 2,
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    'Ceu Mt Nubladuh',
-                    style: _weatherStateStyle,
-                  ),
-                ),
-              ),
-              Divider (
-                color: _dividerColor,
-                indent: 0.5,
-                endIndent: 0.5,
-              ),
-              Expanded (
-                flex: 6,
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Image.asset('assets/weather_indicators/${weatherData.imgCode}.png')
-                ),
-              ),
-              Divider (
-                color: _dividerColor,
-                indent: 0.5,
-                endIndent: 0.5,
-              ),
-              Expanded (
-                flex: 2,
-                child: Row (
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget> [
-                    RichText(
-                      text: TextSpan (
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: 'MIN: ',
-                            style: _valueDescriptionStyle,
-                          ),
-                          TextSpan(
-                            text: '${weatherData.minTemp}',
-                            style: _valueStyle,
-                          ),
-                        ]
-                      ),
-                    ),
-                    VerticalDivider(
-                      color: _dividerColor,
-                      width: 50.0,
-                    ),
-                    RichText(
-                      text: TextSpan (
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: 'MAX: ',
-                            style: _valueDescriptionStyle,
-                          ),
-                          TextSpan(
-                            text: '${weatherData.maxTemp}',
-                            style: _valueStyle,
-                          ),
-                        ]
-                      ),
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
-        )
+    return Card(
+      elevation: 6.0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15.0),
       ),
+      child: Padding (
+        padding: const EdgeInsets.symmetric(
+          horizontal: 20.0, 
+          vertical: 15.0
+        ),
+        child: Column (
+          children: <Widget> [
+            Expanded (
+              flex: 2,
+              child: Align(
+                alignment: Alignment.center,
+                child: Text(
+                  'Ceu Mt Nubladuh',
+                  style: _weatherStateStyle,
+                ),
+              ),
+            ),
+            Divider (
+              color: _dividerColor,
+              indent: 0.5,
+              endIndent: 0.5,
+            ),
+            Expanded (
+              flex: 6,
+              child: Align(
+                alignment: Alignment.center,
+                child: Image.asset('assets/weather_indicators/${weatherData.imgCode}.png')
+              ),
+            ),
+            Divider (
+              color: _dividerColor,
+              indent: 0.5,
+              endIndent: 0.5,
+            ),
+            Expanded (
+              flex: 2,
+              child: Row (
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget> [
+                  RichText(
+                    text: TextSpan (
+                      children: <TextSpan>[
+                        TextSpan(
+                          text: 'MIN: ',
+                          style: _valueDescriptionStyle,
+                        ),
+                        TextSpan(
+                          text: '${weatherData.minTemp}',
+                          style: _valueStyle,
+                        ),
+                      ]
+                    ),
+                  ),
+                  VerticalDivider(
+                    color: _dividerColor,
+                    width: 50.0,
+                  ),
+                  RichText(
+                    text: TextSpan (
+                      children: <TextSpan>[
+                        TextSpan(
+                          text: 'MAX: ',
+                          style: _valueDescriptionStyle,
+                        ),
+                        TextSpan(
+                          text: '${weatherData.maxTemp}',
+                          style: _valueStyle,
+                        ),
+                      ]
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      )
     );
   }
 }

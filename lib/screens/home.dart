@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_weather/model/weather_data.dart';
-import 'package:mobile_weather/widgets/weather_card.dart';
+import 'package:mobile_weather/widgets/weather_list.dart';
 
 class Home extends StatelessWidget {
   const Home({ Key? key }) : super(key: key);
@@ -9,7 +8,11 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea (
-        child: WeatherCard(weatherData: WeatherData(maxTemp: 25, minTemp: 15, imgCode: '01'),),
+        child: SizedBox(
+          height: MediaQuery.of(context).size.height * 0.40,
+          width: MediaQuery.of(context).size.width * 0.85,
+          child: WeatherList()
+        ),
       ),
     );
   }
