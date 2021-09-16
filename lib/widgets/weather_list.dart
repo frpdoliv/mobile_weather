@@ -23,6 +23,7 @@ class WeatherList extends StatelessWidget {
     return PageView.builder(
       controller: pageController,
       itemCount: weatherForecast.length,
+      physics: BouncingScrollPhysics(),
       itemBuilder: (BuildContext context, int index) {
         return Container(
           margin: EdgeInsets.only(left: 5, right: 5),
