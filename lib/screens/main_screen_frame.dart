@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_weather/providers/weather_data_fetcher.dart';
+import 'package:mobile_weather/screens/current_forecast.dart';
+import 'package:mobile_weather/screens/daily_forecast.dart';
+import 'package:mobile_weather/screens/hourly_forecast.dart';
 import 'package:mobile_weather/widgets/weather_list.dart';
 
 class MainScreenFrame extends StatefulWidget {
@@ -11,8 +14,10 @@ class MainScreenFrame extends StatefulWidget {
 
 class _MainScreenFrameState extends State<MainScreenFrame> {
   int _selectedIndex = 1;
-  final List<Widget> screens = <Widget>[
-    
+  final List<Widget> _screens = <Widget>[
+    HourlyForecast(),
+    CurrentForecast(),
+    DailyForecast(),
   ];
 
   
@@ -44,13 +49,7 @@ class _MainScreenFrameState extends State<MainScreenFrame> {
           ),
         ],
       ),
-      body: SafeArea (
-        child: SizedBox(
-          height: MediaQuery.of(context).size.height * 0.40,
-          width: MediaQuery.of(context).size.width * 0.85,
-          child: WeatherList()
-        ),
-      ),
+      body: _screens[_selectedIndex]
     );
   }
 }
