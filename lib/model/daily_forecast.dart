@@ -18,7 +18,7 @@ class DailyForecast{
   final int humidity;
   final double dewPoint;
   final int cloudiness;
-  final int uvIndex;
+  final double uvIndex;
   final double precipitationProb;
   final WindData windData;
   final WeatherCondition weatherCondition;

@@ -11,7 +11,7 @@ class CurrentForecast {
   final int humidity;
   final double dewPoint;
   final int cloudiness;
-  final int uvIndex;
+  final double uvIndex;
   final WindData windData;
   final WeatherCondition weatherCondition;
 
