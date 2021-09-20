@@ -1,15 +1,15 @@
-import 'package:mobile_weather/screens/current_forecast.dart';
-import 'package:mobile_weather/screens/daily_forecast.dart';
-import 'package:mobile_weather/screens/hourly_forecast.dart';
+import 'package:mobile_weather/model/current_forecast.dart';
+import 'package:mobile_weather/model/daily_forecast.dart';
+import 'package:mobile_weather/model/hourly_forecast.dart';
 
 class LocationForecast{
-  double latitude;
-  double longitude;
-  String timezone;
-  int timezoneOffset;
-  CurrentForecast currentForecast;
-  List<HourlyForecast> hourlyForecasts;
-  List<DailyForecast> dailyForecasts;
+  final double latitude;
+  final double longitude;
+  final String timezone;
+  final int timezoneOffset;
+  final CurrentForecast currentForecast;
+  final List<HourlyForecast> hourlyForecasts;
+  final List<DailyForecast> dailyForecasts;
 
   LocationForecast({
     required this.latitude,
