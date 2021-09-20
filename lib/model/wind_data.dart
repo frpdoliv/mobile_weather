@@ -3,5 +3,5 @@ class WindData {
   final int windDirection;
   final double? windGust;
 
-  WindData({required this.windGust, required this.windDirection, required this.windSpeed});
+  WindData({this.windGust, required this.windDirection, required this.windSpeed});
 }
