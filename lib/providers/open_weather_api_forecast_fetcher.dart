@@ -5,6 +5,7 @@ import 'package:http/http.dart' as http;
 class OpenWeatherAPIForecastFetcher extends ForecastFetcher {
   final String latitude;
   final String longitude;
+  static const String apiKey = //TODO Place api key here
   
   OpenWeatherAPIForecastFetcher._({required this.latitude, required this.longitude});
 
