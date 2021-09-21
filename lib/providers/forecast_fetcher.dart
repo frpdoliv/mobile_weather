@@ -119,8 +119,8 @@ abstract class ForecastFetcher {
   Future<void> update() async {
     Map<String, dynamic> forecastJSON = await fetch();
     _locationForecast = LocationForecast(
-      latitude: forecastJSON['latitude'].toDouble(),
-      longitude: forecastJSON['longitude'].toDouble(),
+      latitude: forecastJSON['lat'].toDouble(),
+      longitude: forecastJSON['lon'].toDouble(),
       timezone: forecastJSON['timezone'],
       timezoneOffset: forecastJSON['timezone_offset'],
       currentForecast: _currentForecastFactory(forecastJSON),
