@@ -5,8 +5,7 @@ class DailyForecast extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Text('DailyForecast'),
-    );
+    return Text('DailyForecast');
+
   }
 }

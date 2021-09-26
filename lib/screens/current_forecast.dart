@@ -1,12 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_weather/model/location_forecast.dart';
 
 class CurrentForecast extends StatelessWidget {
-  const CurrentForecast({ Key? key }) : super(key: key);
+  final LocationForecast? _forecastData; 
+  
+  const CurrentForecast({ Key? key , LocationForecast? forecastData}) : 
+    _forecastData = forecastData,
+    super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Text('CurrentForecast'),
+    return Column(
+      children: [
+        Text('CurrentForecast'),
+        Text('CurrentForecast'),
+        Text('CurrentForecast'),
+        Text('CurrentForecast'),
+        Text('CurrentForecast'),
+        Text('CurrentForecast'),
+        Text('CurrentForecast'),
+        Text('CurrentForecast'),
+        Text('CurrentForecast'),
+        Text('CurrentForecast'),
+        Text('CurrentForecast'),
+      ],
     );
   }
 }
