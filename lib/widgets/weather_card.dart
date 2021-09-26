@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_weather/model/weather_data.dart';
 
@@ -110,4 +110,4 @@ class WeatherCard extends StatelessWidget {
       )
     );
   }
-}
+}*/

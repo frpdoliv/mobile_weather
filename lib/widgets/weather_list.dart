@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import 'package:mobile_weather/model/weather_data.dart';
 import 'package:mobile_weather/widgets/weather_card.dart';
 
@@ -23,13 +23,13 @@ class WeatherList extends StatelessWidget {
     return PageView.builder(
       controller: pageController,
       itemCount: weatherForecast.length,
-      physics: BouncingScrollPhysics(),
+      physics: const BouncingScrollPhysics(),
       itemBuilder: (BuildContext context, int index) {
         return Container(
-          margin: EdgeInsets.only(left: 5, right: 5),
+          margin: const EdgeInsets.only(left: 5, right: 5),
           child: weatherForecast[index]
         );
       }
     );
   }
-}
+}*/
