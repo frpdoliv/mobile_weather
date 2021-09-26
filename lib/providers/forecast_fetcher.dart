@@ -105,7 +105,7 @@ abstract class ForecastFetcher {
       windData: WindData(
         windDirection: dForecast['wind_deg'],
         windSpeed: dForecast['wind_speed'].toDouble(),
-        windGust: dForecast['wind_gust'].toDouble,
+        windGust: dForecast['wind_gust'].toDouble(),
       ),
       weatherCondition: WeatherCondition(
         iconID: dForecast['weather'][0]['icon']
