@@ -5,7 +5,7 @@ import 'package:mobile_weather/screens/search.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(MaterialApp(
-    initialRoute: '/search',
+    initialRoute: '/',
     routes: {
       '/': (context) => const ForecastView(),
       '/search': (context) => const Search(),
