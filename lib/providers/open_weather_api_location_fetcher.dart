@@ -21,8 +21,8 @@ class OpenWeatherAPILocationFetcher implements LocationFetcher {
         longitude: location['lon'].toString(),
         stateName: location['state'],
         countryCode: location['country'],
-        internalCityName: location['name'],
-        cityNames: Map<String, String>.from(location['local_names']),
+        defaultCityName: location['name'],
+        cityNames: location['local_names'] != null ? Map<String, String>.from(location['local_names']) : null,
       );
     }).toList();
   }

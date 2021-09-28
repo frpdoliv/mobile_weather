@@ -1,10 +1,10 @@
 class Location {
   String countryCode;
-  String internalCityName;
+  String defaultCityName;
   String? stateName;
   String latitude;
   String longitude;
-  Map<String, String> cityNames;
+  Map<String, String>? cityNames;
 
-  Location({required this.countryCode, required this.cityNames, required this.internalCityName, this.stateName, required this.latitude, required this.longitude});
+  Location({required this.countryCode, this.cityNames, required this.defaultCityName, this.stateName, required this.latitude, required this.longitude});
 }
