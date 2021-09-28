@@ -25,16 +25,16 @@ class LocationAppBar extends StatelessWidget{
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             IconButton(
-              onPressed: () {},
+              onPressed: () => Navigator.pop(context),
               splashColor: Colors.green,
               splashRadius: 20.0,
-              icon: Icon(Icons.arrow_back),
+              icon: const Icon(Icons.arrow_back),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 8.0),
+              padding: const EdgeInsets.only(top: 8.0, bottom: 8.0, right: 5.0),
               child: VerticalDivider(
                 thickness: 1.0,
-                width: 10.0,
+                width: 5.0,
                 color: Colors.grey.shade600,
               ),
             ),
