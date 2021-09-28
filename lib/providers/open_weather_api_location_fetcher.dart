@@ -8,7 +8,7 @@ class OpenWeatherAPILocationFetcher implements LocationFetcher {
   static const String _apiKey = "60349aea2f345aed3c44a21871eb8d20";
   
   Future<List<dynamic>> _fetchFromAPI(List<String> locationStrings) async {
-    http.Response response = await http.get(Uri.parse('http://api.openweathermap.org/geo/1.0/direct?q=${locationStrings.join(',')}&appid=$_apiKey'));
+    http.Response response = await http.get(Uri.parse('http://api.openweathermap.org/geo/1.0/direct?q=${locationStrings.join(',')}&limit=5&appid=$_apiKey'));
     return jsonDecode(response.body);
   }
 
