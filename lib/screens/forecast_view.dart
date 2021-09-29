@@ -3,7 +3,6 @@ import 'package:mobile_weather/model/location.dart';
 import 'package:mobile_weather/screens/current_forecast.dart';
 import 'package:mobile_weather/screens/daily_forecast.dart';
 import 'package:mobile_weather/screens/hourly_forecast.dart';
-import 'package:mobile_weather/screens/search.dart';
 
 class ForecastView extends StatefulWidget {
   const ForecastView({ Key? key }) : super(key: key);
@@ -22,7 +21,10 @@ class _ForecastViewState extends State<ForecastView> {
   ];
   
   void userChangeLocation() async {
-    Location? searchResult = await Navigator.pushNamed<Location>(context, '/search'); 
+    Location? searchResult = await Navigator.pushNamed(context, '/search') as Location?;
+    setState(() {
+      location = searchResult ?? location;
+    });
   }
 
   @override
