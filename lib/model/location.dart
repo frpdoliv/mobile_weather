@@ -6,5 +6,14 @@ class Location {
   double longitude;
   Map<String, String>? cityNames;
 
-  Location({required this.countryCode, this.cityNames, required this.defaultCityName, this.stateName, required this.latitude, required this.longitude});
+  Location():
+    this.withAttr(countryCode: 'PT', defaultCityName: 'Leiria', latitude: 0, longitude: 0);
+
+  Location.withAttr({required this.countryCode, this.cityNames, required this.defaultCityName, this.stateName, required this.latitude, required this.longitude});
+
+  @override
+  String toString() {
+    String stateString = stateName == null ? '' : '$stateName, ';
+    return '${cityNames?['en'] ?? defaultCityName}, $stateString$countryCode';
+  }
 }
