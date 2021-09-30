@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_weather/model/location_forecast.dart';
+import 'package:mobile_weather/providers/forecast_fetcher.dart';
+import 'package:mobile_weather/screens/forecast_screen.dart';
 
-class HourlyForecast extends StatelessWidget {
-  const HourlyForecast({ Key? key }) : super(key: key);
+class HourlyForecast extends ForecastScreen {
+  const HourlyForecast({ Key? key, required LocationForecast locationForecast}): super(key: key, locationForecast: locationForecast);
 
   @override
   Widget build(BuildContext context) {
