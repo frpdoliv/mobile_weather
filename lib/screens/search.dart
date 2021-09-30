@@ -26,6 +26,19 @@ class _SearchState extends State<Search> {
     });
   }
 
+  void onGPSLocationTap(BuildContext context) async {
+    try {
+      Navigator.pop(context, await OpenWeatherAPIGPSLocationFetcher().fetch());
+    } on IOFailure {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("No internet connection"),
+          backgroundColor: Colors.red,
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,6 +48,13 @@ class _SearchState extends State<Search> {
             Padding(
               padding: const EdgeInsets.fromLTRB(10.0, 20.0, 10.0, 10.0),
               child: LocationAppBar(onSubmitted: onUserSumission),
+            ),
+            Card(
+              child: ListTile(
+                onTap: () => onGPSLocationTap(context),
+                title: const Text('My Location'),
+                leading: const Icon(Icons.my_location),
+              )
             ),
             Flexible(
               child: FutureBuilder<List<Location>>(
