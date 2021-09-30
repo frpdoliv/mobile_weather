@@ -9,11 +9,10 @@ class LocationCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String stateString = location.stateName == null ? '' : '${location.stateName}, ';
     return Card(
       child: ListTile(
         onTap: onTap,
-        title: Text('${location.cityNames?['en'] ?? location.defaultCityName}, $stateString${location.countryCode}'),
+        title: Text(location.toString()),
         subtitle: IntrinsicHeight(
           child: Row(
             children: <Widget>[
