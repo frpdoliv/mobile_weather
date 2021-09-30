@@ -7,11 +7,15 @@ import 'package:mobile_weather/model/weather_condition.dart';
 import 'package:mobile_weather/model/wind_data.dart';
 
 abstract class ForecastFetcher {
-  late LocationForecast _locationForecast;
-  
-  LocationForecast get locationForecast{
-    return _locationForecast;
+  final double latitude;
+  final double longitude;
+  late Future<LocationForecast> _locationForecast;
+
+  ForecastFetcher({required this.latitude, required this.longitude}) {
+    update();
   }
+
+  Future<LocationForecast> get locationForecast => _locationForecast;
 
   CurrentForecast _currentForecastFactory(Map<String, dynamic> forecastJSON) {
     Map<String, dynamic> currentJSON = forecastJSON['current'];
@@ -116,9 +120,13 @@ abstract class ForecastFetcher {
     )).toList();
   }
 
-  Future<void> update() async {
-    Map<String, dynamic> forecastJSON = await fetch();
-    _locationForecast = LocationForecast(
+  void update() {
+    _locationForecast = parseForecastJSON(fetch());
+  }
+
+  Future<LocationForecast> parseForecastJSON(Future<dynamic> futureForecast) async {
+    Map<String, dynamic> forecastJSON = await futureForecast as Map<String, dynamic>;
+    return LocationForecast(
       latitude: forecastJSON['lat'].toDouble(),
       longitude: forecastJSON['lon'].toDouble(),
       timezone: forecastJSON['timezone'],
@@ -130,5 +138,5 @@ abstract class ForecastFetcher {
   }
 
   @protected
-  Future<Map<String, dynamic>> fetch();
+  Future<dynamic> fetch();
 }
